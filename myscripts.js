@@ -353,7 +353,7 @@ function formDataM1(firstNote, secondNote, thirdNote, fourthNote) {
             }
         } else {
             containerHTML += '<h2 style="font-weight: lighter;">You didn\'t get any notes correct... Don\'t give up!"</h2>';
-            containerHTML += '<img src="./assets/olaf_confused.gif" alt="Animated GIF" width="200" class="img-fluid"><br><br>';
+            containerHTML += '<img src="./assets/olaf_confused.gif" alt="Animated GIF" width="300" class="img-fluid"><br><br>';
         }
     } else {
         var containerHTML = '<div class="container centered-container">';
@@ -461,7 +461,7 @@ function formDataM2(firstNote, secondNote, thirdNote, fourthNote, fifthNote, six
             }
         } else {
             containerHTML += '<h2 style="font-weight: lighter;">You didn\'t get any notes correct... Don\'t give up!"</h2>';
-            containerHTML += '<img src="./assets/olaf_confused.gif" alt="Animated GIF" width="200" class="img-fluid"><br><br>';
+            containerHTML += '<img src="./assets/olaf_confused.gif" alt="Animated GIF" width="300" class="img-fluid"><br><br>';
         }
     } 
     else {
@@ -521,9 +521,18 @@ function playAudioM1(note1, note2, note3, note4) {
                 playNextAudio();
             });
 
+            /*
             // Event listener for audio loading errors
             audio.addEventListener('error', function(event) {
                 console.error('Error loading audio file:', audioFiles[currentAudioIndex], event);
+            });
+            */
+
+            audio.addEventListener('error', function (e) {
+                console.error('Error loading audio file:', audio.src, e);
+                // Move to the next audio file even if there's an error
+                currentAudioIndex++;
+                playNextAudio();
             });
 
             // Play the audio
