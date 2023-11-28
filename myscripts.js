@@ -43,7 +43,7 @@ const {
 
 // Assign variables
 var numBeat = 4, beatValue = 4;
-var rendererWidth = 700, rendererHeight = 350;
+var rendererWidth = 500, rendererHeight = 250;
 var countDelay = 3000;
 
 // Generate random notes and octaves based on difficulty level
@@ -108,7 +108,7 @@ var randNoteArrM2 = [], randOctArrM2 = [], randNoteArrFormattedM2 = [];
     const context = renderer.getContext();
     
     // Scale viewbox of the stave by multipler x and y
-    context.scale(1.2, 1.2);
+    context.scale(1.15, 1.15);
 
     // Open a group to hold all the SVG elements in the measure:
     const group = context.openGroup();
@@ -139,7 +139,7 @@ function initRendererTwoMeasures() {
     const context = renderer.getContext();
 
     // Scale viewbox of the stave by multipler x and y
-    context.scale(1.2, 1.2);
+    //context.scale(1.2, 1.2);
 
     // Open a group to hold all the SVG elements in the measure:
     const group = context.openGroup();
@@ -342,25 +342,25 @@ function formDataM1(firstNote, secondNote, thirdNote, fourthNote) {
                 
                 // Start counting to the score
                 containerHTML += '<h2 style="font-weight: lighter;">Yippee... You got all the notes correct!!!"</h2>';
-                containerHTML += '<img src="./assets/olaf_exclaimed.gif" alt="Animated GIF" class="img-fluid"><br><br>'; 
+                containerHTML += '<img src="./assets/olaf_exclaimed.gif" alt="Animated GIF" width="300" class="img-fluid"><br><br>'; 
             }
             else {
                 if (numCorrect !== 1)
                     containerHTML += '<h2 style="font-weight: lighter;">' + "You got " + numCorrect + " notes correct. You can do it!" + '</h2>'
                 else
                     containerHTML += '<h2 style="font-weight: lighter;">' + "You got " + numCorrect + " note correct. You can do it!" + '</h2>';
-                containerHTML += '<img src="./assets/olaf_puzzled.gif" alt="Animated GIF" class="img-fluid"><br><br>'
+                containerHTML += '<img src="./assets/olaf_puzzled.gif" alt="Animated GIF" width="300" class="img-fluid"><br><br>'
             }
         } else {
             containerHTML += '<h2 style="font-weight: lighter;">You didn\'t get any notes correct... Don\'t give up!"</h2>';
-            containerHTML += '<img src="./assets/olaf_confused.gif" alt="Animated GIF" class="img-fluid"><br><br>';
+            containerHTML += '<img src="./assets/olaf_confused.gif" alt="Animated GIF" width="200" class="img-fluid"><br><br>';
         }
     } else {
         var containerHTML = '<div class="container centered-container">';
         containerHTML += '<h3 style="font-weight: lighter;">LearnMusicalNotes</h3>';
         containerHTML += '<h1 style="font-weight: normal; color: blueviolet;">Gamifying the learning of musical notes</h1>';
         containerHTML += '<h2 style="font-weight: lighter;">A little faster... Try again!</h2>';
-        containerHTML += '<img src="./assets/olaf_sad.gif" alt="Animated GIF" class="img-fluid"><br><br>';
+        containerHTML += '<img src="./assets/olaf_sad.gif" alt="Animated GIF" width="300" class="img-fluid"><br><br>';
     }   
 
     // Close the div element
@@ -450,18 +450,18 @@ function formDataM2(firstNote, secondNote, thirdNote, fourthNote, fifthNote, six
                 }
 
                 containerHTML += '<h2 style="font-weight: lighter;">Yippee... You got all the notes correct!!!"</h2>';
-                containerHTML += '<img src="./assets/olaf_exclaimed.gif" alt="Animated GIF" class="img-fluid"><br><br>';  
+                containerHTML += '<img src="./assets/olaf_exclaimed.gif" alt="Animated GIF" width="300" class="img-fluid"><br><br>';  
             }
             else {
                 if (numCorrect !== 1)
                     containerHTML += '<h2 style="font-weight: lighter;">' + "You got " + numCorrect + " notes correct. You can do it!" + '</h2>'
                 else
                     containerHTML += '<h2 style="font-weight: lighter;">' + "You got " + numCorrect + " note correct. You can do it!" + '</h2>';
-                containerHTML += '<img src="./assets/olaf_puzzled.gif" alt="Animated GIF" class="img-fluid"><br><br>'
+                containerHTML += '<img src="./assets/olaf_puzzled.gif" alt="Animated GIF" width="300" class="img-fluid"><br><br>'
             }
         } else {
             containerHTML += '<h2 style="font-weight: lighter;">You didn\'t get any notes correct... Don\'t give up!"</h2>';
-            containerHTML += '<img src="./assets/olaf_confused.gif" alt="Animated GIF" class="img-fluid"><br><br>';
+            containerHTML += '<img src="./assets/olaf_confused.gif" alt="Animated GIF" width="200" class="img-fluid"><br><br>';
         }
     } 
     else {
@@ -469,7 +469,7 @@ function formDataM2(firstNote, secondNote, thirdNote, fourthNote, fifthNote, six
         containerHTML += '<h3 style="font-weight: lighter;">LearnMusicalNotes</h3>';
         containerHTML += '<h1 style="font-weight: normal; color: blueviolet;">Gamifying the learning of musical notes</h1>';
         containerHTML += '<h2 style="font-weight: lighter;">A little faster... Try again!</h2>';
-        containerHTML += '<img src="./assets/olaf_sad.gif" alt="Animated GIF" class="img-fluid"><br><br>';
+        containerHTML += '<img src="./assets/olaf_sad.gif" alt="Animated GIF" width="300" class="img-fluid"><br><br>';
 
         // Delay for 5 seconds when there is no input
         delay = 5000;
