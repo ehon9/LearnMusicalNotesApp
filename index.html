@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnMusicalNotes</title>
+    <!-- Link to favicon -->
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>    
+    <!-- Splash Screen -->
+    <div class="container mt-4 d-flex align-items-center justify-content-center">        
+        <div class="jumbotron">
+            <h1 class="display-4">LearnMusicalNotes</h1>
+            <p class="lead">Click the button to start</p>
+            <hr class="my-4">
+            <button class="btn btn-primary btn-lg" onclick="startGame()">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Image Container -->
+    <div id="image-container" class="container mt-4">
+        <!-- Image element-->
+    <img id="splashImage" src="./assets/music-splash.jpg" alt="Splash Image" class="img-fluid">
+    <p style="font-style: italic; font-size: 11px;" class="text-center">Image by brgfx on Freepik</p>
+    </div>
+    
+    <!-- Link to Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Load javascripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
+    <script src="splash.js"></script>
+</body>
+</html>

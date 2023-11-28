@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnMusicalNotes</title>
+    <!-- Link to favicon -->
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="container">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">LearnMusicalNotes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto"> <!-- Align menu to the right -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="settings.html">Game Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h2>Gamifying the learning of musical notes</h2>
+        <hr class="mb-4">
+        <h4>Select your game preferences:</h4><br><br>
+
+        <form id="settings">
+            <h5 class="mb-4">Difficulty Level</h5>
+            <label class="mr-3">
+                <input type="radio" name="difficulty" value="easy">
+                Easy
+            </label>
+
+            <label class="mr-3">
+                <input type="radio" name="difficulty" value="normal" checked>
+                Normal
+            </label>
+
+            <label>
+                <input type="radio" name="difficulty" value="challenging">
+                Challenging
+            </label>
+
+            <br><br>
+
+            <h5 class="mb-4">Speed</h5>
+            <label class="mr-3">
+                <input type="radio" name="speed" value="slow">
+                Slow
+            </label>
+
+            <label class="mr-3">
+                <input type="radio" name="speed" value="normal" checked>
+                Normal
+            </label>
+
+            <label>
+                <input type="radio" name="speed" value="fast">
+                Fast
+            </label>
+
+            <br><br>
+
+            <h5 class="mb-4">Sound</h5>
+            <label class="mr-3">
+                <input type="radio" name="sound" value="on">
+                On
+            </label>
+
+            <label>
+                <input type="radio" name="sound" value="off" checked>
+               Off
+            </label>
+
+            <br><br><br><br>
+
+            <button type="button" onclick="goHome()" class="btn btn-primary">Confirm</button>
+        </form>
+    </div>
+
+    <!-- Link to Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Load javascripts -->
+    <script src="mysettings.js"></script>
+</body>
+</html>

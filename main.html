@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnMusicalNotes</title>
+    <!-- Link to favicon -->
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">LearnMusicalNotes</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto"> <!-- Align menu to the right -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings.html">Game Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container mt-4">
+            <h2>Gamifying the learning of musical notes</h2>
+            <hr class="mb-4">
+            <h4>Sight-read and enter notes into each box:</h4>
+
+            <!-- Div that displays the stave -->
+            <div id="staveOutput" style="text-align: center;"></div>
+
+            <!-- Form for user inputs -->
+            <form id="inputForm" class="mt-3" onsubmit="return validateForm()">
+
+                <!-- Form Group for Notes -->
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="note1">First note:</label>
+                        <input type="text" id="note1" class="form-control" size="1" maxlength="1" pattern="[A-Ga-g]+" title="Please enter only valid notes (A to G)" autocomplete="off" required>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="note2">Second note:</label>
+                        <input type="text" id="note2" class="form-control" size="1" maxlength="1" pattern="[A-Ga-g]+" title="Please enter only valid notes (A to G)" autocomplete="off" required>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="note3">Third note:</label>
+                        <input type="text" id="note3" class="form-control" size="1" maxlength="1" pattern="[A-Ga-g]+" title="Please enter only valid notes (A to G)" autocomplete="off" required>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="note4">Fourth note:</label>
+                        <input type="text" id="note4" class="form-control" size="1" maxlength="1" pattern="[A-Ga-g]+" title="Please enter only valid notes (A to G)" autocomplete="off" required>
+                    </div>
+                </div>
+
+                <!-- Container for text box and button -->
+                <div id="textBoxContainer" class="textBoxContainer mt-3"></div>
+
+                <button type="submit" id="submit1" onclick="validateForm()" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <hr class="mt-5">
+
+        <!-- Timer -->
+        <div class="center-width-div" id="countdown">0:00</div>
+
+    </div>
+
+    <!-- Link to Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Load javascripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
+    <script src="myscripts.js"></script>
+</body>
+</html>
