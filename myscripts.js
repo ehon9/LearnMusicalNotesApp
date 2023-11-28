@@ -494,10 +494,10 @@ function formDataM2(firstNote, secondNote, thirdNote, fourthNote, fifthNote, six
 function playAudioM1(note1, note2, note3, note4) {
     
     var audioFiles = [];
-    audioFiles [0] = "./assets/violin-" + note1.replace("/", "") + ".wav";
-    audioFiles [1] = "./assets/violin-" + note2.replace("/", "") + ".wav";
-    audioFiles [2] = "./assets/violin-" + note3.replace("/", "") + ".wav";
-    audioFiles [3] = "./assets/violin-" + note4.replace("/", "") + ".wav"; 
+    audioFiles [0] = "./assets/violin-" + note1.replace("/", "").toLowerCase() + ".wav";
+    audioFiles [1] = "./assets/violin-" + note2.replace("/", "").toLowerCase() + ".wav";
+    audioFiles [2] = "./assets/violin-" + note3.replace("/", "").toLowerCase() + ".wav";
+    audioFiles [3] = "./assets/violin-" + note4.replace("/", "").toLowerCase() + ".wav"; 
 
     // Index to keep track of the current audio file
     var currentAudioIndex = 0;
@@ -553,14 +553,14 @@ function playAudioM1(note1, note2, note3, note4) {
 function playAudioM2(note1, note2, note3, note4, note5, note6, note7, note8) {
     
     var audioFiles = [];
-    audioFiles [0] = "./assets/violin-" + note1.replace("/", "") + ".wav";
-    audioFiles [1] = "./assets/violin-" + note2.replace("/", "") + ".wav";
-    audioFiles [2] = "./assets/violin-" + note3.replace("/", "") + ".wav";
-    audioFiles [3] = "./assets/violin-" + note4.replace("/", "") + ".wav"; 
-    audioFiles [4] = "./assets/violin-" + note5.replace("/", "") + ".wav"; 
-    audioFiles [5] = "./assets/violin-" + note6.replace("/", "") + ".wav"; 
-    audioFiles [6] = "./assets/violin-" + note7.replace("/", "") + ".wav"; 
-    audioFiles [7] = "./assets/violin-" + note8.replace("/", "") + ".wav"; 
+    audioFiles [0] = "./assets/violin-" + note1.replace("/", "").toLowerCase() + ".wav";
+    audioFiles [1] = "./assets/violin-" + note2.replace("/", "").toLowerCase() + ".wav";
+    audioFiles [2] = "./assets/violin-" + note3.replace("/", "").toLowerCase() + ".wav";
+    audioFiles [3] = "./assets/violin-" + note4.replace("/", "").toLowerCase() + ".wav"; 
+    audioFiles [4] = "./assets/violin-" + note5.replace("/", "").toLowerCase() + ".wav"; 
+    audioFiles [5] = "./assets/violin-" + note6.replace("/", "").toLowerCase() + ".wav"; 
+    audioFiles [6] = "./assets/violin-" + note7.replace("/", "").toLowerCase() + ".wav"; 
+    audioFiles [7] = "./assets/violin-" + note8.replace("/", "").toLowerCase() + ".wav"; 
 
     // Index to keep track of the current audio file
     var currentAudioIndex = 0;
