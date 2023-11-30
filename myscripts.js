@@ -336,8 +336,11 @@ function formDataM1(firstNote, secondNote, thirdNote, fourthNote) {
                     playAudioM1(randNoteArrFormattedM1[0], randNoteArrFormattedM1[1], 
                         randNoteArrFormattedM1[2], randNoteArrFormattedM1[3]);
                     
-                    // Delay for 15 seonds when playing audio for one measure
-                    delay = countDelay + 15000;
+                    // Delay for audio playback in one measure
+                    if (settings.instrument !== 'guitar')
+                        delay = countDelay + 14000;
+                    else
+                        delay = countDelay + 12000;
                 }
                 
                 // Start counting to the score
@@ -445,8 +448,11 @@ function formDataM2(firstNote, secondNote, thirdNote, fourthNote, fifthNote, six
                         randNoteArrFormattedM2[0], randNoteArrFormattedM2[1],
                         randNoteArrFormattedM2[2], randNoteArrFormattedM2[3]);
                     
-                    // Delay for 30 seonds when playing audio for two measures
-                    delay = countDelay + 30000;
+                    // Delay for audio playback in two measures
+                    if (settings.instrument !== 'guitar')
+                        delay = countDelay + 27000;
+                    else
+                        delay = countDelay + 17000;
                 }
 
                 containerHTML += '<h2 style="font-weight: lighter;">Yippee... You got all the notes correct!!!"</h2>';
@@ -494,10 +500,28 @@ function formDataM2(firstNote, secondNote, thirdNote, fourthNote, fifthNote, six
 function playAudioM1(note1, note2, note3, note4) {
     
     var audioFiles = [];
-    audioFiles [0] = "./assets/violin-" + note1.replace("/", "").toLowerCase() + ".wav";
-    audioFiles [1] = "./assets/violin-" + note2.replace("/", "").toLowerCase() + ".wav";
-    audioFiles [2] = "./assets/violin-" + note3.replace("/", "").toLowerCase() + ".wav";
-    audioFiles [3] = "./assets/violin-" + note4.replace("/", "").toLowerCase() + ".wav"; 
+    switch (settings.instrument) {
+        case 'violin': 
+            audioFiles [0] = "./assets/violin-" + note1.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [1] = "./assets/violin-" + note2.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [2] = "./assets/violin-" + note3.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [3] = "./assets/violin-" + note4.replace("/", "").toLowerCase() + ".wav"; 
+            break;
+
+        case 'guitar':
+            audioFiles [0] = "./assets/guitar-" + note1.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [1] = "./assets/guitar-" + note2.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [2] = "./assets/guitar-" + note3.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [3] = "./assets/guitar-" + note4.replace("/", "").toLowerCase() + ".wav"; 
+        break;
+
+        case 'piano':
+            audioFiles [0] = "./assets/piano-" + note1.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [1] = "./assets/piano-" + note2.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [2] = "./assets/piano-" + note3.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [3] = "./assets/piano-" + note4.replace("/", "").toLowerCase() + ".wav"; 
+            break;
+    }
 
     // Index to keep track of the current audio file
     var currentAudioIndex = 0;
@@ -521,20 +545,11 @@ function playAudioM1(note1, note2, note3, note4) {
                 playNextAudio();
             });
 
-            /*
             // Event listener for audio loading errors
             audio.addEventListener('error', function(event) {
                 console.error('Error loading audio file:', audioFiles[currentAudioIndex], event);
             });
-            */
-
-            audio.addEventListener('error', function (e) {
-                console.error('Error loading audio file:', audio.src, e);
-                // Move to the next audio file even if there's an error
-                currentAudioIndex++;
-                playNextAudio();
-            });
-
+            
             // Play the audio
             audio.play();
         } else {
@@ -553,14 +568,40 @@ function playAudioM1(note1, note2, note3, note4) {
 function playAudioM2(note1, note2, note3, note4, note5, note6, note7, note8) {
     
     var audioFiles = [];
-    audioFiles [0] = "./assets/violin-" + note1.replace("/", "").toLowerCase() + ".wav";
-    audioFiles [1] = "./assets/violin-" + note2.replace("/", "").toLowerCase() + ".wav";
-    audioFiles [2] = "./assets/violin-" + note3.replace("/", "").toLowerCase() + ".wav";
-    audioFiles [3] = "./assets/violin-" + note4.replace("/", "").toLowerCase() + ".wav"; 
-    audioFiles [4] = "./assets/violin-" + note5.replace("/", "").toLowerCase() + ".wav"; 
-    audioFiles [5] = "./assets/violin-" + note6.replace("/", "").toLowerCase() + ".wav"; 
-    audioFiles [6] = "./assets/violin-" + note7.replace("/", "").toLowerCase() + ".wav"; 
-    audioFiles [7] = "./assets/violin-" + note8.replace("/", "").toLowerCase() + ".wav"; 
+    switch (settings.instrument) {
+        case 'violin': 
+            audioFiles [0] = "./assets/violin-" + note1.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [1] = "./assets/violin-" + note2.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [2] = "./assets/violin-" + note3.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [3] = "./assets/violin-" + note4.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [4] = "./assets/violin-" + note5.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [5] = "./assets/violin-" + note6.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [6] = "./assets/violin-" + note7.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [7] = "./assets/violin-" + note8.replace("/", "").toLowerCase() + ".wav";
+            break;
+
+        case 'guitar':
+            audioFiles [0] = "./assets/guitar-" + note1.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [1] = "./assets/guitar-" + note2.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [2] = "./assets/guitar-" + note3.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [3] = "./assets/guitar-" + note4.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [4] = "./assets/guitar-" + note5.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [5] = "./assets/guitar-" + note6.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [6] = "./assets/guitar-" + note7.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [7] = "./assets/guitar-" + note8.replace("/", "").toLowerCase() + ".wav";
+        break;
+
+        case 'piano':
+            audioFiles [0] = "./assets/piano-" + note1.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [1] = "./assets/piano-" + note2.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [2] = "./assets/piano-" + note3.replace("/", "").toLowerCase() + ".wav";
+            audioFiles [3] = "./assets/piano-" + note4.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [4] = "./assets/piano-" + note5.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [5] = "./assets/piano-" + note6.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [6] = "./assets/piano-" + note7.replace("/", "").toLowerCase() + ".wav"; 
+            audioFiles [7] = "./assets/piano-" + note8.replace("/", "").toLowerCase() + ".wav";
+            break;
+    }
 
     // Index to keep track of the current audio file
     var currentAudioIndex = 0;
@@ -665,11 +706,13 @@ function toggleMenu() {
 
 // Function to retrieve saved settings from local storage
 function getSelectedSettings() {
+    var selectedInstrument = localStorage.getItem('instrument');
     var selectedDifficulty = localStorage.getItem('difficulty');
     var selectedSpeed = localStorage.getItem('speed');
     var selectedSound = localStorage.getItem('sound');
 
     return {
+        instrument: selectedInstrument,
         difficulty: selectedDifficulty, 
         speed: selectedSpeed, 
         sound: selectedSound
